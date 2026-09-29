@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skyline — Weather Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="sky" id="sky"></div>
+
+  <main class="wrap">
+
+    <header class="top">
+      <div class="brand">
+        <span class="brand-mark">◐</span>
+        <span class="brand-name">Skyline</span>
+      </div>
+
+      <form class="search" id="searchForm" autocomplete="off">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Search a city — e.g. Chennai, Tokyo, Lima"
+          aria-label="Search for a city"
+        />
+        <button type="submit" id="searchBtn">Search</button>
+      </form>
+    </header>
+
+    <div class="status-line" id="statusLine" role="status" aria-live="polite"></div>
+
+    <section class="dashboard" id="dashboard" hidden>
+
+      <div class="hero-panel">
+        <div class="hero-top">
+          <div>
+            <h1 class="place-name" id="placeName">—</h1>
+            <p class="place-meta" id="placeMeta">—</p>
+          </div>
+          <div class="condition-badge" id="conditionBadge">
+            <span class="condition-icon" id="conditionIcon">—</span>
+          </div>
+        </div>
+
+        <div class="temp-block">
+          <span class="temp-value" id="tempValue">—</span>
+          <span class="temp-unit">°C</span>
+        </div>
+        <p class="condition-text" id="conditionText">—</p>
+        <p class="feels-like">Feels like <span id="feelsLike">—</span>°C</p>
+      </div>
+
+      <div class="metrics-panel">
+        <div class="metric">
+          <span class="metric-label">Humidity</span>
+          <span class="metric-value" id="humidityValue">—<small>%</small></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Wind speed</span>
+          <span class="metric-value" id="windValue">—<small>km/h</small></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Wind direction</span>
+          <span class="metric-value" id="windDirValue">—</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Pressure</span>
+          <span class="metric-value" id="pressureValue">—<small>hPa</small></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Cloud cover</span>
+          <span class="metric-value" id="cloudValue">—<small>%</small></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Local time</span>
+          <span class="metric-value" id="timeValue">—</span>
+        </div>
+      </div>
+
+      <div class="recent-panel" id="recentPanel" hidden>
+        <span class="recent-label">Recent searches</span>
+        <div class="recent-list" id="recentList"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
